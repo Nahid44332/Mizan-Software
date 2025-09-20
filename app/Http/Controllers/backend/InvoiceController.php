@@ -9,7 +9,11 @@ use Carbon\Carbon;
 
 class InvoiceController extends Controller
 {
-
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function invoiceBilling()
     {
         $invoicelist = Invoice::all();
