@@ -10,7 +10,7 @@ Route::get('/', [AdminAuthController::class, 'index']);
 Route::get('/admin/logout', [AdminAuthController::class, 'logOut']);
 
 Auth::routes(); 
-Route::get('/dashboard', [InvoiceController::class, 'createDashboard']);
+Route::get('/admin/dashboard', [InvoiceController::class, 'createDashboard']);
 Route::get('/admin/invoice', [InvoiceController::class, 'invoiceBilling']);
 Route::get('/admin/create-invoice', [InvoiceController::class, 'invoiceCreate']);
 Route::post('/admin/create-invoice/store', [InvoiceController::class, 'invoiceStore']);
