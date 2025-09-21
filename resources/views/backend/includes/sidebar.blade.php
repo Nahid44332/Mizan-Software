@@ -13,7 +13,7 @@
                   <li class="dropdown">
                       <a href="#"><i class="fa-solid fa-user"></i> <span>টেকনিশিয়ান</span> ▼</a>
                       <ul>
-                          <li><a href="/technician/list">লিস্ট</a></li>
+                          <li><a href="{{url('/admin/tecnician/list')}}">লিস্ট</a></li>
                           <li><a href="{{url('/admin/tecnician/create')}}">নতুন যোগ</a></li>
                           <li><a href="/technician/reports">ছুটির তালিকা</a></li>
                       </ul>

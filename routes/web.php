@@ -23,3 +23,6 @@ Route::get('/admin/invoice-print/{id}', [InvoiceController::class, 'invoicePrint
 //Tecnician
 Route::get('/admin/tecnician/create', [TecnicianController::class, 'tecnicianCreate']);
 Route::post('/admin/tecnician/store', [TecnicianController::class, 'tecnicianStore']);
+Route::get('/admin/tecnician/list', [TecnicianController::class, 'tecnicianList']);
+Route::get('/admin/tecnician/view/{id}', [TecnicianController::class, 'tecnicianView']);
+Route::get('/admin/tecnician/delete/{id}', [TecnicianController::class, 'tecnicianDelete']);
