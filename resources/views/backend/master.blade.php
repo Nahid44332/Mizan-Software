@@ -7,6 +7,18 @@
     <title> Dashboard</title>
 
     @include('backend.includes.style')
+    <style>
+<style>
+.content-wrapper {
+    padding: 20px;
+    transition: margin 0.3s ease, width 0.3s ease;
+}
+
+.sidebar-collapsed .content-wrapper {
+    margin-left: 20px; /* left এ ছোট gap */
+    width: auto;
+}
+</style>
 
 </head>
 <!--end::Head-->
@@ -30,6 +42,19 @@
     <!--end::App Wrapper-->
 
     @include('backend.includes.script')
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("toggle_btn");
+    const body = document.querySelector("body");
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", function () {
+            body.classList.toggle("sidebar-collapsed");
+        });
+    }
+});
+
+</script>
 
 @stack('script')
 </body>
