@@ -27,6 +27,11 @@ class InvoiceController extends Controller
         return view('backend.dashboard', compact('invoicelist'));
     }
 
+    public function invoiceCreate()
+    {
+        return view('backend.invoice-create');
+    }
+
     public function invoiceStore(Request $request)
     {
         $invoice = new Invoice();
@@ -69,8 +74,8 @@ class InvoiceController extends Controller
         $invoice->option_2           = $request->option_2;
 
         $invoice->save();
-
-        return redirect('/admin/invoice')->with('success', 'Invoice created successfully!');
+        toastr()->success('Invoice created successfully!');
+        return redirect('/admin/invoice');
     }
 
 

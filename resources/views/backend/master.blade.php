@@ -7,16 +7,51 @@
     <title> Dashboard</title>
 
     @include('backend.includes.style')
-    <style>
 <style>
-.content-wrapper {
-    padding: 20px;
-    transition: margin 0.3s ease, width 0.3s ease;
+/* Sidebar always full height */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
-.sidebar-collapsed .content-wrapper {
-    margin-left: 20px; /* left এ ছোট gap */
-    width: auto;
+/* Main wrapper যাতে sidebar-এর height অনুযায়ী adjust হয় */
+.app-main {
+    margin-left: 250px; /* default sidebar width */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* যখন sidebar collapse হবে */
+body.sidebar-collapsed .app-main {
+    margin-left: 70px; /* শুধু icon-এর জায়গা */
+    width: calc(100% - 70px);
+}
+
+/* Small devices fix */
+@media (max-width: 768px) {
+    .app-main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+        padding: 10px;
+    }
+    body.sidebar-collapsed .app-main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+}
+
+
+@media (max-width: 991px) {
+    .content-wrapper {
+        margin-left: 0 !important; /* sidebar overlay বা hide হলে */
+        padding: 10px;
+    }
 }
 </style>
 

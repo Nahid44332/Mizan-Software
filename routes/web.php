@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AdminAuthController;
+use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\InvoiceController;
 use App\Http\Controllers\backend\TecnicianController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,10 @@ Route::post('/admin/tecnician/store', [TecnicianController::class, 'tecnicianSto
 Route::get('/admin/tecnician/list', [TecnicianController::class, 'tecnicianList']);
 Route::get('/admin/tecnician/view/{id}', [TecnicianController::class, 'tecnicianView']);
 Route::get('/admin/tecnician/delete/{id}', [TecnicianController::class, 'tecnicianDelete']);
+Route::get('/admin/tecnician/edit/{id}', [TecnicianController::class, 'tecnicianEdit']);
+Route::post('/admin/tecnician/edit/update/{id}', [TecnicianController::class, 'tecnicianUpdate']);
+
+//Profile
+Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
+Route::post('/admin/profile/update', [AdminController::class, 'updateProfile']);
+Route::post('/admin/profile/password/update', [AdminController::class, 'updatePassword']);

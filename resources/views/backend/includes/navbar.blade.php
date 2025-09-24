@@ -1,6 +1,6 @@
 <div class="header bg-danger">
     <div class="header-left">
-        <a href="index-2.html" class="logo">
+        <a href="{{url('/admin/dashboard')}}" class="logo">
             <img src="{{asset('backend/assets/img/logo1.png')}}" width="50" height="100" alt=""> 
             <span>SM-electronic</span>
         </a>
@@ -20,7 +20,7 @@
                 <span>Admin</span>
             </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="profile.html">My Profile</a>
+                <a class="dropdown-item" href="{{url('/admin/profile')}}">My Profile</a>
                 <a class="dropdown-item" href="{{url('/admin/logout')}}">Logout</a>
             </div>
         </li>
@@ -32,7 +32,7 @@
             <i class="fas fa-ellipsis-v"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="profile.html">My Profile</a>
+            <a class="dropdown-item" href="{{url('/admin/profile')}}">My Profile</a>
             <a class="dropdown-item" href="login.html">Logout</a>
         </div>
     </div>
