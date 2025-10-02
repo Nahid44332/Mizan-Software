@@ -20,7 +20,7 @@
                 <p class="mb-3"><strong>ফোন:</strong> {{ $tecnician->phone ?? 'N/A' }}</p>
                 <p class="mb-3"><strong>জন্ম তারিখ:</strong> {{ $tecnician->dob ?? 'N/A' }}</p>
                 <p class="mb-3"><strong>জাতিয় পরিচয়পত্র:</strong> {{ $tecnician->nid ?? 'N/A' }}</p>
-                <p class="mb-3"><strong>জাতিয় পরিচয়পত্র:</strong> {{ $tecnician->passport_no ?? 'N/A' }}</p>
+                <p class="mb-3"><strong>পাসপোর্ট নাম্বার:</strong> {{ $tecnician->passport_no ?? 'N/A' }}</p>
                 <p class="mb-3"><strong>বর্তমান ঠিকানা:</strong> {{ $tecnician->present_address ?? 'N/A' }}</p>
                 <p class="mb-3"><strong>স্থায়ী ঠিকানা:</strong> {{ $tecnician->permanent_address ?? 'N/A' }}</p>
                 <p class="mb-3"><strong>কাজে যোগদানের তারিখ:</strong> {{ $tecnician->join_date ?? 'N/A' }}</p>

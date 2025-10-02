@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
+use App\Models\Technician;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -20,11 +21,12 @@ class InvoiceController extends Controller
         return view('backend.invoice', compact('invoicelist'));
     }
 
-    public function createDashboard()
+    public function Dashboard()
     {
-
-        $invoicelist = Invoice::all();
-        return view('backend.dashboard', compact('invoicelist'));
+        $invoice = Invoice::get()->count();
+        $technician = Technician::get()->count();
+        $todayInvoice = Invoice::whereDate('created_at', Carbon::today())->count();
+        return view('backend.dashboard', compact('invoice', 'technician', 'todayInvoice'));
     }
 
     public function invoiceCreate()
